@@ -1,0 +1,128 @@
+*{font-family: 'Nanum Gothic Coding', monospace;
+
+        }
+
+        .bg {
+            background-image: url("../static/img/resultpage/배경지(불투명.png");
+            background-repeat: repeat;
+            width: 100vw;
+            height: calc(100vh + 30vw);
+
+        }
+
+        .logo-box{
+            background-color: white;
+            width: 100vw;
+        }
+
+        .logo{
+            height:20vh;
+
+        }
+
+        .btn-logo{
+            border: none;
+            background: white;
+            cursor: pointer;
+        }
+
+        /*본문*/
+        .result-box{
+            background-color: white;
+            width: 80vw;
+            height: 52vw;
+            margin: 5vw auto auto auto;
+            border-radius: 2vw;
+        }
+
+        .result-backimg{
+            width: 70vw;
+        }
+
+        .img-title{
+            width: 34vw;
+        }
+
+        .bar-title{
+            width: 30vw;
+        }
+
+        .bar-bread{
+            width: 10vw;
+        }
+
+        .bar-sauce{
+            width: 10.5vw;
+        }
+
+        .bar-cheese{
+            width: 8vw;
+        }
+
+        /*샌드위치*/
+        .name-div{
+            width: 30vw;
+            text-align: center;
+        }
+        .name{
+            font-size: 1.8vw;
+            font-weight: bolder;
+
+
+        }
+
+        .img-sdw{
+            width: 28vw;
+        }
+
+        .kcal{
+            width: 6.5vw;
+        }
+
+        .btn-kcal{
+            border: none;
+            background: white;
+        }
+
+        .img-tip{
+            width: 6.5vw;
+        }
+
+        .input-tip{
+            border: none;
+            background-color: rgb(197, 224, 180);
+            width: 56vw;
+            height: 3.5vw;
+        }
+        .input-tip2{
+            width: 56vw;
+            height: 3.5vw;
+            font-size: 2vw;
+            text-align: center;
+        }
+
+
+        /*데코오브젝트*/
+        .img-tape{
+            width: 12vw;
+        }
+
+        /*공유버튼*/
+        .img-share{
+            width: 6.6vw;
+        }
+
+        .btn-share{
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .img-map{
+            width: 21.6vw;
+
+        }
+
+
+
+

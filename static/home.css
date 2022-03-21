@@ -1,0 +1,51 @@
+* {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+.bg {
+  background-image: url("../static/img/mainpage/배경지(불투명.png");
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-box {
+  background-color: white;
+  width: 100vw;
+  height: 42vw;
+}
+
+.main-img {
+  width: 100vw;
+}
+
+.btn-main {
+  border: none;
+  background: white;
+}
+
+.new {
+  width: 30vw;
+  cursor: pointer;
+}
+
+.img-share {
+  width: 5vw;
+}
+
+.btn-share {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#btn {
+  position: absolute;
+  left: 81vw;
+  top: 40vw;
+  z-index: +1;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 1vw;
+  height: 2vw;
+}
