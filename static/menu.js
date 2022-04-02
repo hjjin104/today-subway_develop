@@ -107,13 +107,14 @@ function gogo() {
       comment_give: comment
     },
     success: function (response) {
-      // 성공하면
-      if (response["result"] == "success") {
-
+      if (response["result"] == "error") {
+        alert("모든 메뉴를 선택하세요!")
+        return;
+      } else {
+        location.replace('/check');
       }
     }
   });
-location.replace('/check');
 }
 
 submitButton.addEventListener("click", gogo);

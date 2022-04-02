@@ -70,18 +70,20 @@ def menuPost():
     img_find = request.form['find_give']
     user = db.a_sandwich.find_one({'name': img_find})['img']
 
-
-    doc = {
-        'sandwich': sandwich_receive,
-        'bread': bread_receive,
-        'sauce': sauce_receive,
-        'cheese': cheese_receive,
-        'comment': comment_receive,
-        'img': user,
-        'like': 0,
-    }
-    db.userchoice.insert_one(doc)
-    return jsonify({'result': 'success'})
+    if sauce_receive == [] or comment_receive == "" :
+        return jsonify({'result': 'error'})
+    else :
+        doc = {
+            'sandwich': sandwich_receive,
+            'bread': bread_receive,
+            'sauce': sauce_receive,
+            'cheese': cheese_receive,
+            'comment': comment_receive,
+            'img': user,
+            'like': 0,
+        }
+        db.userchoice.insert_one(doc)
+        return jsonify({'result': 'success'})
 
 
 
