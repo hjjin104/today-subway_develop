@@ -107,9 +107,12 @@ function gogo() {
       comment_give: comment
     },
     success: function (response) {
-      if (response["result"] == "error") {
-        alert("모든 메뉴를 선택하세요!")
-        return;
+      if (response["result"] == "sauceError") {
+        alert("소스를 선택하세요!")
+        return ;
+      } else if (response["result"] == "commentError") {
+        alert("Tip을 입력하세요!")
+        return ;
       } else {
         location.replace('/check');
       }
