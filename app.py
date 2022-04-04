@@ -70,6 +70,7 @@ def menuPost():
     img_find = request.form['find_give']
     user = db.a_sandwich.find_one({'name': img_find})['img']
 
+    # sauce와 comment를 선택하지 않았을 때 result로 error 보내기
     if sauce_receive == [] :
         return jsonify({'result': 'sauceError'})
     elif comment_receive == "" :
