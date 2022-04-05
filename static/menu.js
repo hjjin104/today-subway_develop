@@ -80,10 +80,10 @@ const submitButton = document.querySelector(".total-btn");
 function gogo() {
   try {
     let sauceArr = [];
-    let sandwich = document.querySelector(".sandwich").innerText;
-    let bread = document.querySelector(".bread").innerText;
-    let cheese = document.querySelector(".cheese").innerText;
-    let sauceAll = document.querySelectorAll(".sauce");
+    const sandwich = document.querySelector(".sandwich").innerText;
+    const bread = document.querySelector(".bread").innerText;
+    const cheese = document.querySelector(".cheese").innerText;
+    const sauceAll = document.querySelectorAll(".sauce");
     let comment = $('#input-tip').val()
 
     for (let i = 0; i < sauceAll.length; i++) {
@@ -91,31 +91,37 @@ function gogo() {
       sauceArr.push(sauces);
     }
 
-    $.ajax({
-      type: "POST",
-      url: "/menu",
-      traditional: true,
-      async: false,
-      data: {
-        find_give: sandwich,
-        sandwich_give: sandwich,
-        bread_give: bread,
-        sauce_give: sauceArr,
-        cheese_give: cheese,
-        comment_give: comment
-      },
-      success: function (response) {
-        if (response["result"] == "sauceError") {
-          alert("소스를 선택하세요!")
-          return;
-        } else if (response["result"] == "commentError") {
-          alert("Tip을 입력하세요!")
-          return;
-        } else {
-          location.replace('/check');
+    if (sauceArr == "") {
+      alert("소스를 선택하세요!")
+    } else if (!comment) {
+      alert("Tip을 입력하세요!")
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/menu",
+        traditional: true,
+        async: false,
+        data: {
+          find_give: sandwich,
+          sandwich_give: sandwich,
+          bread_give: bread,
+          sauce_give: sauceArr,
+          cheese_give: cheese,
+          comment_give: comment
+        },
+        success: function (response) {
+          if (response["result"] == "sauceError") {
+            alert("소스를 선택하세요!")
+            return;
+          } else if (response["result"] == "commentError") {
+            alert("Tip을 입력하세요!")
+            return;
+          } else {
+            location.replace('/check');
+          }
         }
-      }
-    });
+      });
+    }
   } catch (e) {
     alert("모든 재료를 선택하세요!")
   }
