@@ -70,23 +70,28 @@ def menuPost():
     img_find = request.form['find_give']
     user = db.a_sandwich.find_one({'name': img_find})['img']
 
-    # sauce와 comment를 선택하지 않았을 때 result로 error 보내기
-    if sauce_receive == [] :
-        return jsonify({'result': 'sauceError'})
-    elif comment_receive == "" :
-        return jsonify({'result': 'commentError'})
-    else :
-        doc = {
-            'sandwich': sandwich_receive,
-            'bread': bread_receive,
-            'sauce': sauce_receive,
-            'cheese': cheese_receive,
-            'comment': comment_receive,
-            'img': user,
-            'like': 0,
-        }
-        db.userchoice.insert_one(doc)
-        return jsonify({'result': 'success'})
+    # sauce_receive를 db에서 찾을 수 없을 때 result로 error 보내기
+    for i in sauce_receive :
+        sauce = db.a_sauce.find_one({'name': i})
+        if sauce == None :
+            return jsonify({'result': 'wrongSauceError'})
+        # sauce와 comment를 선택하지 않았을 때 result로 error 보내기
+        elif sauce_receive == [] :
+            return jsonify({'result': 'blankSauceError'})
+        elif comment_receive == "" :
+            return jsonify({'result': 'commentError'})
+        else :
+            doc = {
+                'sandwich': sandwich_receive,
+                'bread': bread_receive,
+                'sauce': sauce_receive,
+                'cheese': cheese_receive,
+                'comment': comment_receive,
+                'img': user,
+                'like': 0,
+            }
+            db.userchoice.insert_one(doc)
+            return jsonify({'result': 'success'})
 
 
 

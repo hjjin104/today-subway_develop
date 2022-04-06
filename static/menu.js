@@ -110,10 +110,14 @@ function gogo() {
           comment_give: comment
         },
         success: function (response) {
-          if (response["result"] == "sauceError") {
+          if (response["result"] == "blankSauceError") {
             alert("소스를 선택하세요!")
             return;
-          } else if (response["result"] == "commentError") {
+          } else if (response["result"] == "wrongSauceError") {
+            alert("해당하는 소스가 없습니다!")
+            return ;
+          }
+          else if (response["result"] == "commentError") {
             alert("Tip을 입력하세요!")
             return;
           } else {
