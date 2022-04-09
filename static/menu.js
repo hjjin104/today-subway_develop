@@ -92,9 +92,14 @@ function gogo() {
     }
 
     if (sauceArr == "") {
-      alert("소스를 선택하세요!")
+      if (window.confirm("소스를 선택하세요!")) {
+        openTab(event, 'tab3');
+      } else {
+        return ;
+      }
     } else if (!comment) {
-      alert("Tip을 입력하세요!")
+      alert("Tip을 입력하세요!");
+      return ;
     } else {
       $.ajax({
         type: "POST",
@@ -111,15 +116,20 @@ function gogo() {
         },
         success: function (response) {
           if (response["result"] == "blankSauceError") {
-            alert("소스를 선택하세요!")
-            return;
+            if (window.confirm("소스를 선택!")) {
+              openTab(event, 'tab3');
+            } else {
+              return ;
+            }
           } else if (response["result"] == "wrongSauceError") {
-            alert("해당하는 소스가 없습니다!")
+            if (window.confirm("해당하는 소스가 없습니다!")) {
+              openTab(event, 'tab3');
+            } else {
+              return ;
+            }
+          } else if (response["result"] == "commentError") {
+            alert("Tip을 입력하세요!");
             return ;
-          }
-          else if (response["result"] == "commentError") {
-            alert("Tip을 입력하세요!")
-            return;
           } else {
             location.replace('/check');
           }
