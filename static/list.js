@@ -302,7 +302,7 @@ function likeSandwichRecent(id) {
     url: "/listing/list/like",
     data: { like_give: id },
     success: function (response) {
-      alert(response["msg"]);
+      alert(response["msg"])
       window.location.reload();
     },
   });
