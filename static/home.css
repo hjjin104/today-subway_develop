@@ -1,0 +1,55 @@
+* {
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.bg {
+  background-image: url("../static/img/mainpage/배경지(불투명.png");
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-box {
+  background-color: white;
+  width: 100vw;
+  height: 42vw;
+}
+
+.main-img {
+  width: 100vw;
+}
+
+.btn-main {
+  border: none;
+  background: white;
+}
+
+.new {
+  width: 30vw;
+  cursor: pointer;
+}
+
+.img-share {
+  width: 4vw;
+}
+
+.btn-share {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#btn {
+  position: absolute;
+  right: 6.5vw;
+  top: 0.46vw;
+  width: 10vw;
+  height: 5vw;
+  z-index: +1;
+  background-color: rgb(255, 255, 255, 0);
+  border: 1px solid black;
+  border: none;
+  border-radius: 1vw;
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>오늘의 Subway, 나만의 꿀조합</title>
+  <link rel="stylesheet" type="text/css" href="../static/list.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="bg">
+    <!--   상단 로고 & new btn -->
+    <div style="position:relative;" class="logo-box">
+      <button style="position:absolute; left: calc(50vw - 18.6375vh); " class="btn-logo" id="btn-logo" type="submit"
+        onclick="location.href='/'">
+        <img class="logo" src="../static/img/listpage/로고.png" />
+      </button>
+
+      <button style="position: absolute; bottom: 2vw; left: calc(51vw + 18.6375vmax);" class="btn-top10" id="btn-new"
+        type="submit" onclick="location.href='/menu'">
+        <img class="img-new" src="../static/img/listpage/mainbutton1.png" />
+      </button>
+
+    </div>
+
+    <!--   인기순/최신순 btn-->
+    <div class="btn-box" style="position: relative;">
+      <button style="position: absolute; top: 1.942vw; left: 25vw;" class="btn-top10 active" id="btn-top10"
+        type="submit" onclick="openTab(event, 'popular')">
+        <img class="img-recent" src="../static/img/listpage/인기순버튼통일.png" />
+      </button>
+
+      <button style="position: absolute; top: 1.942vw; left: 51vw;" class="btn-top10" id="btn-recent" type="submit"
+        onclick="openTab(event, 'new')">
+        <img class="img-recent" src="../static/img/listpage/최신순버튼통일.png" />
+      </button>
+    </div>
+
+    <!--   본문 초록박스-->
+    <div id="popular" class="tabcontent" style="display: block">
+      <div class="green-box">
+        <!-- 검색창 -->
+
+        <section class="container" style="position: relative">
+
+          <!--          랭킹 라벨-->
+
+          <!--          1-->
+
+          <div style="position: absolute; left: 1vw;  top: 10vw; z-index: +3;">
+            <img class="ranking1" src="../static/img/listpage/top10page_1.png" />
+          </div>
+
+          <!--          2-->
+          <div style="position: absolute; left: 2vw;  top: 39vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_2.png" />
+          </div>
+
+          <!--          3-->
+
+          <div style="position: absolute; left: 2vw;  top: 68vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_3.png" />
+          </div>
+
+          <!--          4-->
+
+          <div style="position: absolute; left: 2vw;  top: 97vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_4.png" />
+          </div>
+
+          <!--          5-->
+
+          <div style="position: absolute; left: 2vw;  top: 126vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_5.png" />
+          </div>
+
+          <!--          6-->
+
+          <div style="position: absolute; left: 2vw;  top: 155vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_6.png" />
+          </div>
+
+          <!--          7-->
+
+          <div style="position: absolute; left: 2vw;  top: 184vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_7.png" />
+          </div>
+
+          <!--          8-->
+
+          <div style="position: absolute; left: 2vw;  top: 213vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_8.png" />
+          </div>
+
+          <!--          9-->
+
+          <div style="position: absolute; left: 2vw;  top: 242vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_9.png" />
+          </div>
+
+          <!--          10-->
+
+          <div style="position: absolute; left: 2vw;  top: 271vw; z-index: +3;">
+            <img class="ranking" src="../static/img/listpage/top10page_10.png" />
+          </div>
+
+        </section>
+        <ul id="popularSandwich"></ul>
+      </div>
+    </div>
+
+
+    <!--   본문 노란박스-->
+    <div id="new" class="tabcontent" style="display: none">
+      <div class="yellow-box">
+        <!-- 검색창 -->
+        <section class="container" style="position: relative">
+
+          <form id="Newsearch-form" style="position: absolute; z-index: +1; right: 4.5vw; top: 1vw;">
+            <input type="text" id="NewSearch" class="search-input" onkeyup="filter()" placeholder="샌드위치 이름 검색">
+            <!-- <button id="NewBtn" class="search-btn"></button> -->
+          </form>
+
+          <div style="position: absolute; right: 4vw; top: 2vw">
+            <img class="search-img" src="../static/img/listpage/recentpage_search.png" />
+          </div>
+
+        </section>
+        <ul id="newSandwich"></ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../static/list.js"></script>
+</body>
+
+</html>

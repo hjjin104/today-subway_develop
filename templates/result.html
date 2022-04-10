@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>오늘의 Subway, 나만의 꿀조합</title>
+  <link rel="stylesheet" type="text/css" href="../static/result.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="bg">
+    <!--   로고 -->
+    <div style="text-align: center" class="logo-box">
+      <button class="btn-logo" id="btn-logo" type="submit" onclick="location.href='/'">
+        <img class="logo" src="../static/img/resultpage/로고.png" />
+      </button>
+    </div>
+    <!--   본문 -->
+    <div>
+      <div class="result-box" style="position: relative">
+        <img class="result-backimg" style="position: absolute; left:5vw; top: 10vw;"
+          src="../static/img/resultpage/결과지.png" />
+        <!--   타이틀 -->
+
+        <!--   공유버튼 -->
+
+
+        <button title="친구에게 꿀 조합 공유하기" onclick="clip(); return false;" class="btn-share" id="btn-share" style="position: absolute; right: 2vw; bottom: 2vw; z-index: +1;">
+          <img
+                  class="img-share"
+                  src="../static/img/resultpage/공유_링크2.png"
+          />
+        </button>
+
+
+        <button onclick="window.open('https://www.subway.co.kr/storeSearch')" type="button" class="btn-share"
+                id="btn-map" style="position: absolute; left: 29.2vw; top: 40vw; z-index: +1;">
+          <img
+                  class="img-map"
+                  src="../static/img/resultpage/주변매장.png"
+          />
+        </button>
+
+
+        <button class="btn-share" id="btn-home" style="position: absolute; left: 29vw; top: 44.5vw; z-index: +1;"
+                onclick="location.href='/listing'">
+          <img class="img-map" src="../static/img/resultpage/다른꿀조합.png"/>
+        </button>
+
+        <button class="btn-share" id="btn-menu" style="position: absolute; left: 29vw; top: 49.3vw; z-index: +1;"
+                onclick="location.href='/menu'">
+          <img class="img-map" src="../static/img/resultpage/꿀조합만들러.png"/>
+        </button>
+
+
+
+      </div>
+    </div>
+  </div>
+  <script src="../static/result.js"></script>
+
+</body>
+
+</html>

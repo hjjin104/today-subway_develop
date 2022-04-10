@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta property="og:title" content="Today's Subway!" />
+  <meta property="og:description" content="오늘의 Subway, 나만의 꿀조합 만들기" />
+  <meta property="og:image" content="../static/img/resultpage/로고.png" />
+  <title>오늘의 Subway, 나만의 꿀조합</title>
+  <link rel="stylesheet" type="text/css" href="../static/home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="../static/home.js"></script>
+  <div class="bg">
+    <div class="main-box" style="position: relative">
+      <!--        메인 이미지-->
+      <div style="position: absolute;">
+        <img class="main-img" src="../static/img/mainpage/maintotal2.png" />
+      </div>
+    </div>
+
+    <!--      조합 만들기 / 순위페이지 이동버튼 -->
+
+    <button onclick="location.href='/menu'" style="position: absolute; top: 33.49vw; left: 3vw;" class="btn-main"
+      id="btn-new" type="submit">
+      <img class="new" src="../static/img/mainpage/mainbutton1.png" />
+    </button>
+
+    <button onclick="location.href='/listing'" style="position: absolute; top: 33.49vw; left: 35vw;" class="btn-main"
+      id="btn-new" type="submit">
+      <img class="new" src="../static/img/mainpage/mainbutton2.png" />
+    </button>
+
+    <!--      공유버튼 -->
+
+
+    <button title="링크 공유하기" onclick="clip(); return false;" class="btn-share" id="btn-share"
+      style="position: absolute; right: 2vw; top: 1vw; z-index: +1;">
+      <img class="img-share" src="../static/img/resultpage/공유_링크.png" />
+    </button>
+
+    <button id="btn" onclick="change()">About Us</button>
+
+
+  </div>
+</body>
+
+
+</html>

@@ -1,0 +1,249 @@
+* {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  margin: 0px;
+}
+body {
+  background-image: url("../static/img/resultpage/배경지(불투명.png");
+}
+.bg {
+  background-image: url("../static/img/resultpage/배경지(불투명.png");
+  background-repeat: repeat;
+  width: 100vw;
+  height: 350vw;
+}
+
+/*상단 로고*/
+
+.logo-box {
+  background-color: white;
+  width: 100vw;
+  height: 20vh;
+  margin: 0px;
+}
+
+.logo {
+  height: 20vh;
+  width: 37.275vh;
+}
+
+.img-new {
+  width: calc(47vw - 18.6375vmax);
+}
+
+.btn-logo {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-img {
+  width: 35vw;
+  height: 4.18vw;
+}
+/* 인기순 최신순 검색창 */
+.container {
+  width: 84vw;
+  height: 8vw;
+}
+
+.search-input {
+  background-color: transparent;
+  border: 1px solid black;
+  border: none;
+  width: 20vw;
+  height: 2.5vw;
+  margin-top: 1.7vw;
+  margin-right: 9vw;
+  font-size: 1.5vw;
+}
+.search-input2 {
+  background-color: transparent;
+  border: 1px solid black;
+  border: none;
+  width: 20vw;
+  height: 2.5vw;
+  font-size: 1.5vw;
+}
+/* 인기순 최신순 버튼 */
+.search-btn {
+  background-color: transparent;
+  width: 8vw;
+  height: 3.5vw;
+  border: none;
+  cursor: pointer;
+}
+.search-btn2 {
+  background-color: transparent;
+  border: 1px solid black;
+  width: 9vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+/* 인기순,최신순 btn & new btn */
+.btn-box {
+  width: 100vw;
+  height: 8vw;
+}
+
+.btn-top10 {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.img-recent {
+  height: 6.076vw;
+}
+
+/*본문*/
+
+/* 인기순 박스 */
+.green-box {
+  background-color: rgb(169, 209, 142);
+  width: 84vw;
+  height: 305vw;
+  margin: 0 auto auto auto;
+  border-radius: 1vw;
+}
+/* 최신순 박스 */
+.yellow-box {
+  background-color: rgb(255, 217, 102);
+  width: 84vw;
+  margin: 0 auto auto auto;
+  border-radius: 1vw;
+  padding-bottom: 3vw;
+  min-height: 40vw;
+}
+
+/* 카드 내용 */
+.white-cards {
+  background-color: white;
+  width: 76vw;
+  height: 28vw;
+  border-radius: 2vw;
+  margin: auto;
+  margin-bottom: 1vw;
+}
+
+.white-cards2 {
+  background-color: white;
+  width: 76vw;
+  height: 28vw;
+  border-radius: 2vw;
+  margin: auto;
+  margin-bottom: 1vw;
+}
+
+.bar-bread {
+  width: 10vw;
+}
+.bar.img {
+  display: block;
+}
+.bar-sauce {
+  width: 10.5vw;
+}
+
+.bar-cheese {
+  width: 8vw;
+}
+
+.name-div {
+  width: 30vw;
+  text-align: center;
+}
+.name {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.img-sdw {
+  width: 28vw;
+}
+
+.kcal {
+  width: 6.5vw;
+}
+
+.btn-kcal {
+  border: none;
+  background: white;
+}
+
+.img-tip {
+  width: 6.5vw;
+}
+
+.input-tip {
+  border: none;
+  background-color: rgb(197, 224, 180);
+  width: 56vw;
+  height: 3.5vw;
+}
+.input-tip2 {
+  width: 56vw;
+  height: 3.5vw;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.nb-like {
+  width: 5vw;
+  height: 3vw;
+  font-size: 2.2vw;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn-like {
+  width: 5vw;
+  height: 4vw;
+  background-color: white;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+.btn-like:hover {
+  background-color: gainsboro;
+}
+.btn-like:active {
+  background-color: lightpink;
+}
+
+.img-like {
+  width: 8vw;
+}
+
+.ranking1 {
+  width: 10vw;
+}
+
+.ranking {
+  width: 7.5vw;
+}
+
+/* 최신순 리스트 */
+#newSandwich {
+  margin: 0px;
+  width: 100%;
+  /* text-align: center; */
+  margin: auto;
+  padding: 0px;
+  list-style-type: none;
+}
+#popularSandwich {
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 0px;
+  list-style-type: none;
+}
+#search-form {
+  margin: auto;
+  text-align: right;
+}
+#Newsearch-form {
+  text-align: right;
+}
