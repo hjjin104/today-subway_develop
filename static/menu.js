@@ -92,28 +92,33 @@ function gogo() {
   }
 
   console.log(sauceArr);
-
-  $.ajax({
-    type: "POST",
-    url: "/menu",
-    traditional: true,
-    async: false,
-    data: {
-      find_give: sandwich,
-      sandwich_give: sandwich,
-      bread_give: bread,
-      sauce_give: sauceArr,
-      cheese_give: cheese,
-      comment_give: comment
-    },
-    success: function (response) {
-      // 성공하면
-      if (response["result"] == "success") {
-
+  if (sauceArr == "") {
+    alert("소스를 선택하세요!")
+    return ;
+  } else if (!comment) {
+    alert("Tip을 입력하세요!")
+  } else {
+    $.ajax({
+      type: "POST",
+      url: "/menu",
+      traditional: true,
+      async: false,
+      data: {
+        find_give: sandwich,
+        sandwich_give: sandwich,
+        bread_give: bread,
+        sauce_give: sauceArr,
+        cheese_give: cheese,
+        comment_give: comment
+      },
+      success: function (response) {
+        // 성공하면
+        if (response["result"] == "success") {
+          location.replace('/check');
+        }
       }
-    }
-  });
-location.replace('/check');
+    });
+  }
 }
 
 submitButton.addEventListener("click", gogo);
