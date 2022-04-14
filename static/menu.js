@@ -91,12 +91,12 @@ function gogo() {
     sauceArr.push(sauces);
   }
 
-  // if (sauceArr == "") {
-  //   alert("소스를 선택하세요!")
-  //   return ;
-  // } else if (!comment) {
-  //   alert("Tip을 입력하세요!")
-  // } else {
+  if (sauceArr == "") {
+    alert("소스를 선택하세요!")
+    return ;
+  } else if (!comment) {
+    alert("Tip을 입력하세요!")
+  } else {
     $.ajax({
       type: "POST",
       url: "/menu",
@@ -111,16 +111,18 @@ function gogo() {
         comment_give: comment
       },
       success: function (response) {
-        // 성공하면
-        if (response["result"] == "error") {
-          alert("모든 재료를 선택하세요!");
+        if (response["result"] == "sauceError") {
+          alert("소스를 선택하세요!");
+          return ;
+        } else if (response["result"] == "commentError") {
+          alert("Tip을 입력하세요!");
           return ;
         } else {
           location.replace('/check');
         }
       }
     });
-  // }
+  }
 }
 
 submitButton.addEventListener("click", gogo);

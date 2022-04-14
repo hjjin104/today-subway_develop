@@ -70,8 +70,10 @@ def menuPost():
     img_find = request.form['find_give']
     user = db.a_sandwich.find_one({'name': img_find})['img']
 
-    if sauce_receive == [] or comment_receive == "" :
-        return jsonify({'result': 'error'})
+    if sauce_receive == [] :
+        return jsonify({'result': 'sauceError'})
+    elif comment_receive == "" :
+        return jsonify({'result': 'commentError'})
     else :
         doc = {
             'sandwich': sandwich_receive,
