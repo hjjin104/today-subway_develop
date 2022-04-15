@@ -68,24 +68,28 @@ def menuPost():
     cheese_receive = request.form['cheese_give']
     comment_receive = request.form['comment_give']
     img_find = request.form['find_give']
-    user = db.a_sandwich.find_one({'name': img_find})['img']
+    img_receive = db.a_sandwich.find_one({'name': img_find})['img']
 
-    if sauce_receive == [] :
-        return jsonify({'result': 'sauceError'})
-    elif comment_receive == "" :
-        return jsonify({'result': 'commentError'})
-    else :
-        doc = {
-            'sandwich': sandwich_receive,
-            'bread': bread_receive,
-            'sauce': sauce_receive,
-            'cheese': cheese_receive,
-            'comment': comment_receive,
-            'img': user,
-            'like': 0,
-        }
-        db.userchoice.insert_one(doc)
-        return jsonify({'result': 'success'})
+    for i in sauce_receive :
+        sauce = db.a_sauce.find_one({'name': i})
+        if sauce == None :
+            return jsonify({'result': 'wrongSauceError'})
+        elif sauce_receive == [] :
+            return jsonify({'result': 'blankSauceError'})
+        elif comment_receive == "" :
+            return jsonify({'result': 'commentError'})
+        else :
+            doc = {
+                'sandwich': sandwich_receive,
+                'bread': bread_receive,
+                'sauce': sauce_receive,
+                'cheese': cheese_receive,
+                'comment': comment_receive,
+                'img': img_receive,
+                'like': 0,
+            }
+            db.userchoice.insert_one(doc)
+            return jsonify({'result': 'success'})
 
 
 
