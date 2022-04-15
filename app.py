@@ -70,27 +70,32 @@ def menuPost():
     img_find = request.form['find_give']
     img_receive = db.a_sandwich.find_one({'name': img_find})['img']
 
-    for i in sauce_receive :
-        sauce = db.a_sauce.find_one({'name': i})
-        if sauce == None :
-            return jsonify({'result': 'wrongSauceError'})
-        elif sauce_receive == [] :
+    # comment를 입력하지 않았을 때 result로 commentError
+    if comment_receive == "" :
+        return jsonify({'result': 'commentError'})
+    elif sauce_receive == [] or sauce_receive != [] :
+        # sauce를 선택하지 않았을 때 result로 blankSauceError
+        if sauce_receive == [] :
             return jsonify({'result': 'blankSauceError'})
-        elif comment_receive == "" :
-            return jsonify({'result': 'commentError'})
+        # sauce_receive를 DB에서 찾을 수 없을 때 result로 wrongSauceError
         else :
-            doc = {
-                'sandwich': sandwich_receive,
-                'bread': bread_receive,
-                'sauce': sauce_receive,
-                'cheese': cheese_receive,
-                'comment': comment_receive,
-                'img': img_receive,
-                'like': 0,
-            }
-            db.userchoice.insert_one(doc)
-            return jsonify({'result': 'success'})
-
+            for i in sauce_receive :
+                sauce = db.a_sauce.find_one({'name': i})
+                if sauce == None :
+                    return jsonify({'result': 'wrongSauceError'})
+                # 모두 올바른 값이 들어왔을 때 DB에 저장
+                else :
+                    doc = {
+                        'sandwich': sandwich_receive,
+                        'bread': bread_receive,
+                        'sauce': sauce_receive,
+                        'cheese': cheese_receive,
+                        'comment': comment_receive,
+                        'img': img_receive,
+                        'like': 0,
+                    }
+                    db.userchoice.insert_one(doc)
+                    return jsonify({'result': 'success'})
 
 
 #lastpage로 조합 내려주기
