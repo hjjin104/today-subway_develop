@@ -71,10 +71,6 @@ for (var i = 0; i < cheeseLinks.length; i++) {
   cheeseLinks[i].addEventListener("click", CheeseSelect);
 }
 
-// 다 더해지는 값
-
-
-
 const submitButton = document.querySelector(".total-btn");
 
 function gogo() {
@@ -93,8 +89,11 @@ function gogo() {
     }
 
     if (sauceArr == "") {
-      alert("소스를 선택하세요!");
-      return ;
+      if (window.confirm("소스를 선택하세요!")) {
+        openTab(event, 'tab3');
+      } else {
+        return ;
+      }
     } else if (!comment) {
       alert("Tip을 입력하세요!");
       return ;
@@ -114,11 +113,17 @@ function gogo() {
         },
         success: function (response) {
           if (response["result"] == "blackSauceError") {
-            alert("소스를 선택하세요!");
-            return ;
+            if (window.confirm("소스를 선택하세요!")) {
+              openTab(event, 'tab3');
+            } else {
+              return ;
+            }
           } else if (response["result"] == "wrongSauceError") {
-            alert("해당하는 소스가 없습니다!");
-            return ;
+            if (window.confirm("해당하는 소스가 없습니다!")) {
+              openTab(event, 'tab3');
+            } else {
+              return ;
+            }
           } else if (response["result"] == "commentError") {
             alert("Tip을 입력하세요!");
             return;
